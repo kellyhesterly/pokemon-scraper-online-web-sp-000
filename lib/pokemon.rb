@@ -21,6 +21,5 @@ class Pokemon
     SELECT * FROM pokemon WHERE id = ? LIMIT 1
     SQL
     db.execute(sql, id).map {|row| self.new(row[0], row[1], row[2])}
-
   end
 end
