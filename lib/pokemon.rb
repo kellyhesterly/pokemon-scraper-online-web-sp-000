@@ -20,14 +20,7 @@ class Pokemon
     sql = <<-SQL
     SELECT * FROM pokemon WHERE id = ? LIMIT 1
     SQL
-    db.execute(sql, id).map do |row|
-      pokemon = self.new(name, type, db)
-      pokemon.id = row[0]
-      pokemon.name = row[1]
-      pokemon.type = row[2]
-      pokemon.db = db
-      pokemon
-      binding.pry
+    db.execute(sql, id).map {|row| Pokemon.new(id: row[0], name: row[1], type: row[2], db: db)}
     end
   end
 end
