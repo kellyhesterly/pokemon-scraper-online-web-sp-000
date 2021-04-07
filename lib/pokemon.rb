@@ -22,6 +22,9 @@ class Pokemon
     SQL
     db.execute(sql, id).map do |row|
       pokemon = self.new(name, type, db)
+      pokemon.id = row[0]
+      pokemon.name = row[1]
+      pokemon.type = row[2]
       binding.pry
     end
   end
