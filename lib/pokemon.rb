@@ -13,6 +13,6 @@ class Pokemon
     INSERT INTO pokemons (name, type) VALUES (?, ?)
     SQL
     db.exeute(sql)
-    @id = db.execute("SELECT last_insert_rowid FROM pokemons")
+    @id = db.execute("SELECT last_insert_rowid FROM pokemons")[0][0]
   end
 end
