@@ -25,6 +25,7 @@ class Pokemon
       pokemon.id = row[0]
       pokemon.name = row[1]
       pokemon.type = row[2]
+      pokemon
       binding.pry
     end
   end
