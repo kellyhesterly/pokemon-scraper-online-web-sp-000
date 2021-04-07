@@ -26,5 +26,6 @@ class Pokemon
       pokemon.name = row[1]
       pokemon.type = row[2]
       pokemon
+    end
   end
 end
