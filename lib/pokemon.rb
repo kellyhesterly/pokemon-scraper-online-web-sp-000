@@ -20,6 +20,6 @@ class Pokemon
     sql = <<-SQL
     SELECT * FROM pokemon WHERE id = ? LIMIT 1
     SQL
-    db.execute(sql, id).map {|row| self.new(id: row[0], name: row[1], type: row[2], db:)}
+    db.execute(sql, id).map {|row| self.new(id: row[0], name: row[1], type: row[2], db: nil)}
   end
 end
