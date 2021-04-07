@@ -21,7 +21,7 @@ class Pokemon
     SELECT * FROM pokemon WHERE id = ? LIMIT 1
     SQL
     db.execute(sql, id).map do |row|
-      pokemon = self.new(:name, :type, :db)
+      pokemon = self.new(name:, type:, db:)
       binding.pry
     end
   end
